@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
+  styleExp: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.styleExp = 'italic';
   }
 
 }

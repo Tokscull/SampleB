@@ -1,13 +1,18 @@
+<div class="container">
 
+    <br>
+    <h4>List of status codes:</h4>
 
-<div class="alert alert-warning">
-    List of status codes:
+<div class="alert alert-success">
     <ul>
         <li *ngFor="let code of statusCodes">
-            <button class="btn btn-warning btn-sm" (click)="showCodeInfo(code)">{{code.code}} </button>
+            <button class="btn  btn-sm" (click)="showCodeInfo(code)">{{code.code}} </button>
         </li>
     </ul>
 </div>
 
 
 <app-status-code [statusCode]="childStatusCode"></app-status-code>
+
+
+</div>

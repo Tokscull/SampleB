@@ -9,7 +9,7 @@ import {StatusCode} from '../../models/status-code';
 })
 export class StatusCodesComponent implements OnInit {
 
-    private statusCodes: StatusCode[];
+    statusCodes: StatusCode[];
     childStatusCode = new StatusCode();
 
 

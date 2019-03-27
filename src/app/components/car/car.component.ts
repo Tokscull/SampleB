@@ -51,8 +51,11 @@ export class CarComponent implements OnInit {
   }
 
   addOption(option: string): boolean {
-    this.options.unshift(option);
-    return false;
+      if (option) {
+          this.options.unshift(option);
+          return false;
+      }
+      return true;
   }
 
   deleteOption(option: string) {

@@ -7,24 +7,31 @@ import { AppComponent } from './app.component';
 import {CarComponent} from './components/car/car.component';
 import {ContactsComponent} from './components/contacts/contacts.component';
 import {ColorService} from './serveces/color/color.service';
+import {StatusCodeService} from './serveces/status-code/status-code.service';
+import {StatusCodesComponent} from './components/status-codes/status-codes.component';
+import {StatusCodeComponent} from './components/status-codes/status-code/status-code.component';
+
 
 const appRouter: Routes = [
   {path: '', component: CarComponent},
-  {path: 'about', component: ContactsComponent}
+  {path: 'about', component: ContactsComponent},
+   {path: 'status-codes', component: StatusCodesComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     CarComponent,
-    ContactsComponent
+    ContactsComponent,
+    StatusCodesComponent,
+    StatusCodeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRouter)
   ],
-  providers: [ColorService],
+  providers: [ColorService, StatusCodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

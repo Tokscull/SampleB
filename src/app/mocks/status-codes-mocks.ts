@@ -1,7 +1,7 @@
 
 export const STATUS_CODES =
     [{
-        id: '74',
+        id: 74,
         code: 'ALLOCF',
         description: 'Database has an allocation failure.',
         objectType: {id: 1, name: 'IMS_DATABASE', description: 'Database'},

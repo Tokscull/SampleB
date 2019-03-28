@@ -11,6 +11,7 @@ import {StatusCodeService} from './serveces/status-code/status-code.service';
 import {StatusCodesComponent} from './components/status-codes/status-codes.component';
 import {StatusCodeComponent} from './components/status-codes/status-code/status-code.component';
 import { SearchPipe } from './pipe/search/search.pipe';
+import { ChangeColorDirective } from './directives/changeColor/change-color.directive';
 
 
 const appRouter: Routes = [
@@ -26,7 +27,8 @@ const appRouter: Routes = [
     ContactsComponent,
     StatusCodesComponent,
     StatusCodeComponent,
-    SearchPipe
+    SearchPipe,
+    ChangeColorDirective
   ],
   imports: [
     BrowserModule,

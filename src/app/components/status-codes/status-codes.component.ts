@@ -15,6 +15,7 @@ export class StatusCodesComponent implements OnInit {
     isShowStatusCode: boolean;
     objectType: ObjectType;
     isShowObjectType: boolean;
+    searchStr: string;
 
 
   constructor(private statusCodesService: StatusCodeService) {
@@ -24,6 +25,7 @@ export class StatusCodesComponent implements OnInit {
       this.isShowStatusCode = false;
       this.isShowObjectType = false;
       this.statusCodes = this.statusCodesService.getStatusCode();
+      this.searchStr = '';
   }
 
     showCodeInfo(statusCode: StatusCode) {
@@ -34,6 +36,6 @@ export class StatusCodesComponent implements OnInit {
 
     onDataChange(objectType: ObjectType) {
       this.objectType = objectType;
-      this.isShowObjectType = true;
+      this.isShowObjectType = !this.isShowObjectType;
     }
 }

@@ -10,6 +10,7 @@ import {ColorService} from './serveces/color/color.service';
 import {StatusCodeService} from './serveces/status-code/status-code.service';
 import {StatusCodesComponent} from './components/status-codes/status-codes.component';
 import {StatusCodeComponent} from './components/status-codes/status-code/status-code.component';
+import { SearchPipe } from './pipe/search/search.pipe';
 
 
 const appRouter: Routes = [
@@ -24,7 +25,8 @@ const appRouter: Routes = [
     CarComponent,
     ContactsComponent,
     StatusCodesComponent,
-    StatusCodeComponent
+    StatusCodeComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

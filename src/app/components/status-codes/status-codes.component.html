@@ -3,16 +3,35 @@
     <br>
     <h4>List of status codes:</h4>
 
-<div class="alert alert-success">
-    <ul>
-        <li *ngFor="let code of statusCodes">
-            <button class="btn  btn-sm" (click)="showCodeInfo(code)">{{code.code}} </button>
-        </li>
-    </ul>
-</div>
+    <div class="alert alert-success">
+        <ul>
+            <li *ngFor="let statusCode of statusCodes">
+                <button class="btn btn-sm" (click)="showCodeInfo(statusCode)">{{statusCode.code}} </button>
+            </li>
+        </ul>
+    </div>
 
 
-<app-status-code [statusCode]="childStatusCode"></app-status-code>
+    <app-status-code *ngIf="isShowStatusCode" [statusCode]="childStatusCode" (dataChange)="onDataChange($event)"></app-status-code>
+
+
+    <div *ngIf="isShowObjectType">
+        <br>
+        <h4>ObjectType:</h4>
+
+        <table class="table table-bordered table-dark table-sm">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>description</th>
+            </tr>
+            <tr>
+                <td>{{objectType?.id}}</td>
+                <td>{{objectType?.name}}</td>
+                <td>{{objectType?.description}}</td>
+            </tr>
+        </table>
+    </div>
 
 
 </div>

@@ -1,18 +1,19 @@
 
+<br>
+<h4>Status Code:</h4>
 
-
-<table border="1" width="100%" cellpadding="5">
-    <tr>
-        <th bgcolor="#D3EDF6">Id</th>
-        <th bgcolor="#D3EDF6">Code</th>
-        <th bgcolor="#D3EDF6">Description</th>
-        <th bgcolor="#D3EDF6">Create incidents</th>
-        <th bgcolor="#D3EDF6">Issue grouping</th>
+<table class="table table-bordered table-sm">
+    <tr class="table-primary">
+        <th>Id</th>
+        <th>Code</th>
+        <th (click)="click()">Description</th>
+        <th>Create incidents</th>
+        <th>Issue grouping</th>
     </tr>
-  <tr>
+  <tr class="table-warning">
         <td>{{statusCode.code}}</td>
         <td>{{statusCode.code}}</td>
-        <td>{{statusCode.description}}</td>
+        <td (click)="click()">{{statusCode.description}}</td>
         <td>{{statusCode.createIncidents}}</td>
         <td>{{statusCode.issueGrouping}}</td>
     </tr>

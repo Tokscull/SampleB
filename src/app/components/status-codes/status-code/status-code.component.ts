@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {StatusCode} from '../../../models/status-code';
 
 @Component({
@@ -9,12 +9,16 @@ import {StatusCode} from '../../../models/status-code';
 export class StatusCodeComponent implements OnInit {
 
     @Input() statusCode = new StatusCode();
+    @Output() dataChange = new EventEmitter();
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
+    click() {
+        this.dataChange.emit(this.statusCode.objectType);
+    }
 
 }

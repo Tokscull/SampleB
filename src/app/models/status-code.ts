@@ -5,7 +5,7 @@ export class StatusCode {
     code: string;
     description: string;
     objectType: ObjectType;
-    objectTypeName: null;
+    objectTypeName: string;
     issueGrouping: boolean;
     createIncidents: boolean;
     status: string;

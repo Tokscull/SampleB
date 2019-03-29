@@ -13,8 +13,8 @@
 
     <div class="alert alert-success">
         <ul>
-            <li *ngFor="let statusCode of statusCodes  | search:searchStr">
-                <button appChangeColor class="btn btn-sm" (click)="showCodeInfo(statusCode)">{{statusCode.code}} </button>
+            <li *ngFor="let statusCode of statusCodes | search:searchStr | statusCodeFillPipe">
+                <button  appChangeColor class="btn btn-sm" (click)="showCodeInfo(statusCode)">{{statusCode.code}} </button>
             </li>
         </ul>
     </div>

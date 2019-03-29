@@ -31,6 +31,7 @@ export class StatusCodesComponent implements OnInit {
     showCodeInfo(statusCode: StatusCode) {
         this.childStatusCode = statusCode;
         this.isShowStatusCode = true;
+        this.isShowObjectType = false;
     }
 
 

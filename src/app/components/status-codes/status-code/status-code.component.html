@@ -7,15 +7,19 @@
         <th>Id</th>
         <th>Code</th>
         <th (click)="click()">Description</th>
+        <th>ObjectTypeName</th>
         <th>Create incidents</th>
         <th>Issue grouping</th>
+        <th>Status</th>
     </tr>
   <tr class="table-warning">
         <td>{{statusCode.code}}</td>
         <td>{{statusCode.code}}</td>
         <td (click)="click()">{{statusCode.description}}</td>
+        <td>{{statusCode.objectTypeName}}</td>
         <td>{{statusCode.createIncidents}}</td>
         <td>{{statusCode.issueGrouping}}</td>
+      <td>{{statusCode.status}}</td>
     </tr>
 </table>
 

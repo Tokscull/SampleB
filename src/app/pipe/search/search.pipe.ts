@@ -6,7 +6,10 @@ import {StatusCode} from '../../models/status-code';
 })
 export class SearchPipe implements PipeTransform {
 
-    transform(statusCodes: StatusCode[], value: string) {
+    transform(statusCodes: StatusCode[], value: string): StatusCode[] {
+        if (!statusCodes) {
+            return null;
+        }
         return statusCodes.filter(statusCode => {
             return statusCode.code.includes(value);
         });

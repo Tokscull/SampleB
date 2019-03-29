@@ -10,11 +10,11 @@ import {ColorService} from './serveces/color/color.service';
 import {StatusCodeService} from './serveces/status-code/status-code.service';
 import {StatusCodesComponent} from './components/status-codes/status-codes.component';
 import {StatusCodeComponent} from './components/status-codes/status-code/status-code.component';
-import {SearchPipe} from './pipe/search/search.pipe';
 import {ChangeColorDirective} from './directives/changeColor/change-color.directive';
 import {StatusCodeFillPipePipe} from './pipe/statusCodeFillPipe/status-code-fill-pipe.pipe';
 import {CarouselModule, TooltipModule} from 'ngx-bootstrap';
 import {CarouselBasicComponentComponent} from './components/carousel-basic-component/carousel-basic-component.component';
+import {SearchPipe} from './pipe/search/search.pipe';
 
 
 const appRouter: Routes = [

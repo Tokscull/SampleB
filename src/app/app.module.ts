@@ -6,21 +6,25 @@ import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from './app.component';
 import {CarComponent} from './components/car/car.component';
 import {ContactsComponent} from './components/contacts/contacts.component';
-import {ColorService} from './serveces/color/color.service';
-import {StatusCodeService} from './serveces/status-code/status-code.service';
+import {ColorService} from './services/color/color.service';
+import {StatusCodeService} from './services/status-code/status-code.service';
 import {StatusCodesComponent} from './components/status-codes/status-codes.component';
 import {StatusCodeComponent} from './components/status-codes/status-code/status-code.component';
 import {ChangeColorDirective} from './directives/changeColor/change-color.directive';
-import {StatusCodeFillPipePipe} from './pipe/statusCodeFillPipe/status-code-fill-pipe.pipe';
+import {StatusCodeFillPipePipe} from './pipes/statusCodeFillPipe/status-code-fill-pipe.pipe';
 import {CarouselModule, TooltipModule} from 'ngx-bootstrap';
 import {CarouselBasicComponentComponent} from './components/carousel-basic-component/carousel-basic-component.component';
-import {SearchPipe} from './pipe/search/search.pipe';
+import {SearchPipe} from './pipes/search/search.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import { StudentComponent } from './components/student/student.component';
+import {HttpService} from './services/http/http.service';
 
 
 const appRouter: Routes = [
     {path: '', component: CarComponent},
     {path: 'about', component: ContactsComponent},
-    {path: 'status-codes', component: StatusCodesComponent}
+    {path: 'status-codes', component: StatusCodesComponent},
+    {path: 'students', component: StudentComponent}
 ];
 
 @NgModule({
@@ -33,17 +37,19 @@ const appRouter: Routes = [
         SearchPipe,
         ChangeColorDirective,
         StatusCodeFillPipePipe,
-        CarouselBasicComponentComponent
+        CarouselBasicComponentComponent,
+        StudentComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         TooltipModule.forRoot(),
         RouterModule.forRoot(appRouter),
-        CarouselModule
+        CarouselModule,
+        HttpClientModule
 
     ],
-    providers: [ColorService, StatusCodeService],
+    providers: [ColorService, StatusCodeService , HttpService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

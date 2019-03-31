@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ColorService} from '../../serveces/color/color.service';
+import {ColorService} from '../../services/color/color.service';
 
 @Component({
   selector: 'app-car',

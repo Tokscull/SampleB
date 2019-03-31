@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StatusCodeService} from '../../serveces/status-code/status-code.service';
+import {StatusCodeService} from '../../services/status-code/status-code.service';
 import {StatusCode} from '../../models/status-code';
 import {ObjectType} from '../../models/object-type';
 

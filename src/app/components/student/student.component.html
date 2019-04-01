@@ -1,6 +1,21 @@
 <div class="container">
     <br>
-
+    <form class="form-group">
+        <div>
+            <input type="text" placeholder="name" class="form-control"  [(ngModel)]="student.name" name="name">
+            <br>
+            <input type="text" placeholder="login" class="form-control" [(ngModel)]="student.login" name="login">
+            <br>
+            <input type="text" placeholder="password" class="form-control"  [(ngModel)]="student.password" name="password">
+            <br>
+            <input type="text" placeholder="university" class="form-control"  [(ngModel)]="student.university" name="university">
+            <br>
+            <input type="number" placeholder="course" class="form-control" [(ngModel)]="student.course" name="course">
+            <br>
+        </div>
+        <button class="btn btn-outline-success" (click)="insertStudent(student)">Insert Student</button>
+    </form>
+    <br>
     <table class="table table-bordered table-dark table-sm">
         <tr>
             <th>Id</th>
@@ -18,3 +33,5 @@
         </tr>
     </table>
 </div>
+
+

@@ -11,6 +11,7 @@ import {Student} from '../../models/student';
 export class StudentComponent implements OnInit {
 
     students: Student[];
+    student = new Student();
 
   constructor(private httpService: HttpService) { }
 
@@ -23,5 +24,16 @@ export class StudentComponent implements OnInit {
               console.log(error);
           });
   }
+
+    insertStudent() {
+        this.httpService.insertStudent('http://localhost:8080/api/student/insertStudent', this.student)
+            .subscribe(value => {
+                    console.log(value);
+                },
+                error => {
+                    console.log(error);
+                });
+
+    }
 
 }

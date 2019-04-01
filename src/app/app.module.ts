@@ -18,13 +18,15 @@ import {SearchPipe} from './pipes/search/search.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { StudentComponent } from './components/student/student.component';
 import {HttpService} from './services/http/http.service';
+import {ImsComponent} from './components/ims/ims.component';
 
 
 const appRouter: Routes = [
     {path: '', component: CarComponent},
     {path: 'about', component: ContactsComponent},
     {path: 'status-codes', component: StatusCodesComponent},
-    {path: 'students', component: StudentComponent}
+    {path: 'students', component: StudentComponent},
+    {path: 'ims', component: ImsComponent}
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const appRouter: Routes = [
         ChangeColorDirective,
         StatusCodeFillPipePipe,
         CarouselBasicComponentComponent,
-        StudentComponent
+        StudentComponent,
+        ImsComponent
     ],
     imports: [
         BrowserModule,

@@ -19,4 +19,8 @@ export class HttpService {
     public insertStudent(url: string, student: Student): Observable<any> {
         return this.http.post(url, student);
     }
+
+    public getImsConnect(url: string): Observable<any> {
+        return this.http.get(url);
+    }
 }

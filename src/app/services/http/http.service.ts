@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Student} from '../../models/student';
+import {Command} from '../../models/command';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,12 @@ export class HttpService {
         return this.http.post(url, student);
     }
 
-    public getImsConnect(url: string): Observable<any> {
-        return this.http.get(url);
+    public getDb2Connect(url: string, message: string): Observable<any> {
+        return this.http.post(url, message);
+    }
+
+    public getImsConnect(url: string, command: Command): Observable<any> {
+        return this.http.post(url, command);
     }
 }
+

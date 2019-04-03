@@ -6,6 +6,7 @@
             <input type="text" placeholder="message" class="form-control"  [(ngModel)]="command.message" name="message">
             <br>
         </div>
+        <app-modal-window [command]="command"></app-modal-window>
       <!--   <form *ngIf="isOptions">
             <div class="form-group">
                 <input type="text" placeholder="login" class="form-control" [(ngModel)]="command.login" name="login">
@@ -19,9 +20,6 @@
     <br>
     <br>
     <textarea *ngIf="imsMessage" readonly class="form-control rounded-0" id="exampleFormControlTextarea2" rows="25" [value]="imsMessage?.result"></textarea>
-
-    <app-modal-window [command]="command"></app-modal-window>
-
 </div>
 
 

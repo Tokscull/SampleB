@@ -36,4 +36,14 @@ export class StudentComponent implements OnInit {
 
     }
 
+    deleteStudentById() {
+        this.httpService.deleteStudentById('http://localhost:8080/api/student/deleteStudent', this.student.id)
+            .subscribe(value => {
+                    console.log(value);
+                },
+                error => {
+                    console.log(error);
+                });
+    }
+
 }

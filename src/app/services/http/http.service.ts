@@ -21,8 +21,12 @@ export class HttpService {
         return this.http.post(url, student);
     }
 
-    public getDb2Connect(url: string, message: string): Observable<any> {
-        return this.http.post(url, message);
+    public deleteStudentById(url: string, id: number): Observable<any> {
+        return this.http.post(url, id);
+    }
+
+    public getDb2Connect(url: string, command: Command): Observable<any> {
+        return this.http.post(url, command);
     }
 
     public getImsConnect(url: string, command: Command): Observable<any> {

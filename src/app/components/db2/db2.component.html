@@ -9,7 +9,7 @@
             <input type="text" placeholder="message" class="form-control"  [(ngModel)]="message" name="message">
             <br>
         </div>
-        <button class="btn btn-outline-success" (click)="sendMessage(message)">Send message</button>
+        <app-modal-window [command]="command" (authChange)="sendMessage($event)"></app-modal-window>
     </form>
     <br>
     <br>

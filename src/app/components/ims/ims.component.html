@@ -6,16 +6,7 @@
             <input type="text" placeholder="message" class="form-control"  [(ngModel)]="command.message" name="message">
             <br>
         </div>
-        <app-modal-window [command]="command"></app-modal-window>
-      <!--   <form *ngIf="isOptions">
-            <div class="form-group">
-                <input type="text" placeholder="login" class="form-control" [(ngModel)]="command.login" name="login">
-                <br>
-                <input type="text" placeholder="password" class="form-control" [(ngModel)]="command.password" name="password">
-                <br>
-            </div>
-        </form> -->
-        <button class="btn btn-outline-success" (click)="sendMessage(command)">Send message</button>
+        <app-modal-window [command]="command" (authChange)="sendMessage($event)"></app-modal-window>
     </form>
     <br>
     <br>

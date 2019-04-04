@@ -4,11 +4,13 @@ export class Student {
     login: string;
     password: string;
     university: string;
+    course: number;
     constructor() {
-        this.id = 0;
+        this.id = null;
         this.name = '';
         this.login = '';
         this.password = '';
         this.university = '';
+        this.course = null;
     }
 }

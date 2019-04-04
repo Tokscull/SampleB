@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <h4 class="modal-title">Authorization</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -8,23 +8,16 @@
     <div class="modal-body">
         <form>
             <div class="form-group">
-                <div class="input-group">
-                    <input id="dateOfBirth" class="form-control" type="text" placeholder="login" [(ngModel)]="command.login" name="dp" ngbDatepicker #dp="ngbDatepicker">
-                    <input  class="form-control" type="password" placeholder="password" name="dp" [(ngModel)]="command.password" ngbDatepicker #dp="ngbDatepicker">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-                    </div>
-                </div>
+                    <input  class="form-control" type="text" placeholder="login" name="login" [(ngModel)]="command.login">
+            </div>
+            <div class="form-group">
+                <input  class="form-control" type="password" placeholder="password" name="password" [(ngModel)]="command.password">
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close(command)">Save</button>
+        <button type="button" class="btn btn-outline-success" (click)="modal.close()">Save</button>
     </div>
 </ng-template>
+<button class="btn btn-outline-success" (click)="open(content)">Send message</button>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Login&Passoword</button>
-
-<hr>
-
-<pre>{{closeResult}}</pre>

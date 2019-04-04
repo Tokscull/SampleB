@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../../services/http/http.service';
+import {Command} from '../../models/command';
 
 @Component({
   selector: 'app-db2',
@@ -7,18 +8,19 @@ import {HttpService} from '../../services/http/http.service';
   styleUrls: ['./db2.component.scss']
 })
 export class Db2Component implements OnInit {
-    private db2Message: any;
-    message: string;
+
+    db2Message: any;
+    command: Command;
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-      this.message = '';
+      this.command = new Command();
       this.db2Message = null;
   }
 
-    sendMessage(message: string) {
-        this.httpService.getDb2Connect('http://localhost:8080/api/db2/db2Connect', message)
+    sendMessage(command: Command) {
+        this.httpService.getDb2Connect('http://localhost:8080/api/db2/db2Connect', command)
             .subscribe(value => {
                     console.log(value);
                     this.db2Message = value;

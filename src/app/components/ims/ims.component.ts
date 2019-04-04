@@ -10,29 +10,25 @@ import {Command} from '../../models/command';
 export class ImsComponent implements OnInit {
 
     imsMessage: any;
-    isOptions: boolean;
     command: Command;
 
-  constructor(private httpService: HttpService) { }
+    constructor(private httpService: HttpService) {
+    }
 
-  ngOnInit() {
-      this.command = new Command();
-      this.imsMessage = null;
-      this.isOptions = false;
-  }
+    ngOnInit() {
+        this.command = new Command();
+        this.imsMessage = null;
+    }
 
     sendMessage(command: Command) {
-        if (!this.isOptions) {
-            this.isOptions = true;
-        } else {
-            this.httpService.getImsConnect('http://localhost:8080/api/ims/imsConnect', command)
-                .subscribe(value => {
-                        console.log(value);
-                        this.imsMessage = value;
-                    },
-                    error => {
-                        console.log(error);
-                    });
-        }
+        console.log(command);
+        this.httpService.getImsConnect('http://localhost:8080/api/ims/imsConnect', command)
+            .subscribe(value => {
+                    console.log(value);
+                    this.imsMessage = value;
+                },
+                error => {
+                    console.log(error);
+                });
     }
 }

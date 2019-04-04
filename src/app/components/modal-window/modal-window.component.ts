@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ModalDismissReasons, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Command} from '../../models/command';
 
 
@@ -11,7 +11,7 @@ import {Command} from '../../models/command';
 export class ModalWindowComponent implements OnInit {
 
     @Input() command = new Command();
-    closeResult: string;
+    @Output() authChange = new EventEmitter();
 
     constructor(private modalService: NgbModal) {}
 
@@ -20,9 +20,10 @@ export class ModalWindowComponent implements OnInit {
 
     open(content) {
         this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-            this.closeResult = `Closed with: ${result}`;
+            this.authChange.emit(this.command);
+            console.log(`Closed with: ${result}`);
         }, (reason) => {
-            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            console.log(`Dismissed ${this.getDismissReason(reason)}`);
         });
     }
 
@@ -35,7 +36,6 @@ export class ModalWindowComponent implements OnInit {
             return  `with: ${reason}`;
         }
     }
-
 }
 
 

@@ -16,6 +16,14 @@
         <button class="btn btn-outline-success" (click)="insertStudent(student)">Insert Student</button>
     </form>
     <br>
+    <form class="form-group">
+        <div>
+            <input type="number" placeholder="id" class="form-control"  [(ngModel)]="student.id" name="id">
+            <br>
+        </div>
+        <button class="btn btn-outline-success" (click)="deleteStudentById(student.id)">Delete Student</button>
+    </form>
+    <br>
     <table class="table table-bordered table-dark table-sm">
         <tr>
             <th>Id</th>

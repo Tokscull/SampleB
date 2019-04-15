@@ -21,7 +21,6 @@ export class ImsComponent implements OnInit {
     }
 
     sendMessage(command: Command) {
-        console.log(command);
         this.httpService.getImsConnect('http://localhost:8080/api/ims/imsConnect', command)
             .subscribe(value => {
                     console.log(value);

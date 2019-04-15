@@ -6,7 +6,7 @@
     <br>
     <form class="form-group">
         <div>
-            <input type="text" placeholder="message" class="form-control"  [(ngModel)]="message" name="message">
+            <input type="text" placeholder="message" class="form-control"  [(ngModel)]="command.message" name="message">
             <br>
         </div>
         <app-modal-window [command]="command" (authChange)="sendMessage($event)"></app-modal-window>
